@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 40 33% 98%;
+    --foreground: 20 20% 15%;
+    --card: 40 30% 97%;
+    --card-foreground: 20 20% 15%;
+    --popover: 40 30% 97%;
+    --popover-foreground: 20 20% 15%;
+    --primary: 36 90% 50%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 345 60% 30%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 40 20% 92%;
+    --muted-foreground: 20 10% 45%;
+    --accent: 174 50% 35%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 36 30% 85%;
+    --input: 36 30% 85%;
+    --ring: 36 90% 50%;
+    --radius: 0.75rem;
+
+    /* Saffron Gold palette */
+    --saffron-50: 40 100% 97%;
+    --saffron-100: 38 100% 90%;
+    --saffron-200: 36 100% 80%;
+    --saffron-300: 35 98% 70%;
+    --saffron-400: 34 96% 60%;
+    --saffron-500: 36 90% 50%;
+    --saffron-600: 32 90% 45%;
+    --saffron-700: 28 85% 38%;
+    --saffron-800: 24 80% 30%;
+    --saffron-900: 20 75% 22%;
+
+    /* Burgundy palette */
+    --burgundy-50: 345 80% 97%;
+    --burgundy-100: 345 70% 90%;
+    --burgundy-200: 345 65% 80%;
+    --burgundy-300: 345 60% 68%;
+    --burgundy-400: 345 58% 55%;
+    --burgundy-500: 345 60% 42%;
+    --burgundy-600: 345 60% 30%;
+    --burgundy-700: 345 55% 25%;
+    --burgundy-800: 345 50% 18%;
+    --burgundy-900: 345 45% 12%;
+
+    /* Spiritual Teal palette */
+    --spiritual-50: 174 60% 96%;
+    --spiritual-100: 174 55% 88%;
+    --spiritual-200: 174 50% 78%;
+    --spiritual-300: 174 48% 65%;
+    --spiritual-400: 174 46% 52%;
+    --spiritual-500: 174 50% 35%;
+    --spiritual-600: 174 52% 28%;
+    --spiritual-700: 174 50% 22%;
+    --spiritual-800: 174 48% 16%;
+    --spiritual-900: 174 45% 10%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+  h1, h2, h3 {
+    @apply font-display;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/70 backdrop-blur-md border border-white/30 shadow-lg;
+  }
+  .heritage-gradient {
+    background: linear-gradient(135deg, hsl(var(--saffron-500)), hsl(var(--burgundy-600)));
+  }
+  .spiritual-gradient {
+    background: linear-gradient(135deg, hsl(var(--spiritual-500)), hsl(var(--spiritual-700)));
+  }
+  .story-link * {
+    @apply relative inline-block after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left;
+  }
+  .hover-scale {
+    @apply transition-transform duration-200 hover:scale-105;
+  }
+}
